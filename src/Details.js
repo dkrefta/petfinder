@@ -8,13 +8,9 @@ const petfinder = pf({
 });
 
 class Details extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      loading: true
-    };
-  }
+  state = {
+    loading: true
+  };
 
   componentDidMount() {
     petfinder.pet
@@ -51,16 +47,16 @@ class Details extends React.Component {
     const { animal, breed, location, description } = this.state;
 
     return (
-      <div className="details" >
-      <div>
-        <h1> {name} </h1>
-        <h2> 
-        {animal}  - {breed} - {location} 
-        </h2>
-        <p> {description}</p>
+      <div className="details">
+        <div>
+          <h1> {name} </h1>
+          <h2>
+            {animal} - {breed} - {location}
+          </h2>
+          <p> {description}</p>
+        </div>
       </div>
-      </div>
-    )
+    );
   }
 }
 
