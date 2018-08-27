@@ -36,6 +36,7 @@ class App extends React.Component {
       });
   }
   render() {
+    console.log(this.state.pets)
     return (
       <div>
         <h1>Adopt Me!</h1>
@@ -50,6 +51,7 @@ class App extends React.Component {
             return (
               <Pet
                 animal={pet.animal}
+                age={pet.age}
                 key={pet.id}
                 name={pet.name}
                 breed={breed}
