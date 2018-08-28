@@ -12,6 +12,9 @@ class Results extends React.Component {
     pets: []
   };
 
+
+
+  
   componentDidMount() {
     petfinder.pet
       .find({ location: "Seattle, WA", output: "full" })
