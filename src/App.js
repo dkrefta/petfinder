@@ -7,6 +7,11 @@ import pf from "petfinder-client";
 import { Provider } from "./SearchContext";
 import SearchParams from "./SearchParams";
 
+const petfinder = pf({
+  key: process.env.API_KEY,
+  secret: process.env.API_SECRET
+});
+
 class App extends React.Component {
   constructor(props) {
     super(props);
