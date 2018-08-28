@@ -7,4 +7,11 @@ test("snapshot", () => {
   expect(c.toJSON()).toMatchSnapshot();
 });
 
+test("shows modal when toggleModal is called", () => {
+  const c = create(<Details search={() => {}} />);
+  const instance = c.getInstance();
 
+  expect(instace.state.showModal).toBe(false);
+  instance.toggleModal();
+  expect(instance.state.showModal).toBe(true);
+});
