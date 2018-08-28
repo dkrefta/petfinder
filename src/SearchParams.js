@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import pf, { ANIMALS } from "petfinder-client";
 
-const petfinder = pf ({
+const petfinder = pf({
   key: process.env.API_KEY,
   secret: process.env.API_SECRET
-})
+});
 
 export default class SearchParams extends Component {
   state = {
@@ -20,8 +20,18 @@ export default class SearchParams extends Component {
     });
   };
   handleAnimalChange = event => {
+    this.setState(
+      {
+        animal: event.target.value,
+        breed: ""
+      },
+      this.getBreeds
+    );
+  };
+
+  handleBreedChange = event => {
     this.setState({
-      animal: event.target.value
+      breed: event.target.value
     });
   };
 
@@ -78,6 +88,24 @@ export default class SearchParams extends Component {
             ))}
           </select>
         </label>
+        <label htmlFor="breed">
+        Breed 
+        <select 
+        id="breed"
+        value={this.state.breed}
+        onChange={this.handleBreedChange}
+        onBlur={this.handleBreedChange}
+        disabled={this.state.breeds.length === 0}
+        >
+        <option/>
+        {this.state.breeds.map(breed => (
+          <option key={breed} value={breed}> 
+          {breed}
+          </option>
+        ))}
+        </select>
+        </label>
+        <button>Submit</button>
       </div>
     );
   }
