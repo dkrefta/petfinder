@@ -76,6 +76,11 @@ class App extends React.Component {
       <div>
         <header>
           <Link to="/">Adopt Me!</Link>
+          <Link to="/search-params">
+          <span arial-label="search" role="img">
+           Search For Pets
+          </span>
+          </Link>
         </header>
         <Provider value={this.state}>
           <Router>
