@@ -3,12 +3,16 @@ import { ANIMALS } from "petfinder-client";
 import { Consumer } from "./SearchContext";
 
 class SearchBox extends Component {
+  handleFormSubmit = event => {
+    event.preventDefault();
+    this.props.search();
+  };
   render() {
     return (
       <Consumer>
         {context => (
           <div className="search-params">
-            <form onSubmit={this.props.search}>
+            <form onSubmit={this.handleFormSubmit}>
               <label htmlFor="location">
                 Location
                 <input
