@@ -4,5 +4,7 @@ import Details from "../Details";
 
 test("snapshot", () => {
   const c = create(<Details />);
-  expect(c.toJSON()).toMatchSnapsho();
+  expect(c.toJSON()).toMatchSnapshot();
 });
+
+
