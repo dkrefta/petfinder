@@ -70,8 +70,10 @@ class Results extends React.Component {
   }
 }
 
-const mapStateToProps = ({ location }) => ({
-  location
+const mapStateToProps = ({ location, breed, animal }) => ({
+  location,
+  animal,
+  breed
 });
 
 export default connect(mapStateToProps)(Results);
